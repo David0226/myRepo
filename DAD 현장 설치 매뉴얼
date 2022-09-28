@@ -1,1 +1,21 @@
-* 준비물 : DAD, USB-LAN 케이블, HDMI,RGB 케이블, 
+* 준비물 : DAD, 카메라, USB-LAN 케이블, HDMI,RGB 케이블, 마우스/키보드
+
+* 설치 순서
+1) DAD 및 케이블 등 연결
+2) 
+
+
+## Address
+METHOD : POST
+http://221.157.88.60:14201/smartvision/fgs/start or stop
+
+
+## Body contents
+{
+  "dvce_id" : "cam131",
+  "strm_url" : "rtsp://admin:!q1w2e3r4@192.168.1.131:554",
+  "fps" : "1",
+  "out_dir" : "/home/spring/data/output/",
+  "scale" : "",
+  "crop" : ""
+}
