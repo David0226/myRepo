@@ -9,6 +9,31 @@
 METHOD : POST
 http://221.157.88.60:14201/smartvision/fgs/start or stop
 
+$ ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.101:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/sample/cam101_%Y%m%d_%H%M%S.jpg
+
+## 이미지
+#1 덕풍
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.105:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam105_%Y%m%d_%H%M%S.jpg &
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.117:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam117_%Y%m%d_%H%M%S.jpg &
+
+#2 우영
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.104:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam104_%Y%m%d_%H%M%S.jpg &
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.124:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam124_%Y%m%d_%H%M%S.jpg &
+
+#3 서울대 평창
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.106:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam106_%Y%m%d_%H%M%S.jpg &
+$ nohup ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp://admin:!q1w2e3r4@192.168.1.113:554 -vf fps=1 -strftime 1 /home/bnd/skcc/image/output/cam113_%Y%m%d_%H%M%S.jpg &
+
+#4 우곱 - 돈사
+$ nohup ffmpeg -y -rtsp_transport tcp -i rtsp://skcc:#skcc09628@211.193.241.190:554/ch01/0 -vf fps=1 -strftime 1  /home/bnd/skcc/image/output/ch01_%Y%m%d_%H%M%S.jpg &
+$ nohup ffmpeg -y -rtsp_transport tcp -i rtsp://skcc:#skcc09628@211.193.241.190:554/ch03/0 -vf fps=1 -strftime 1  /home/bnd/skcc/image/output/ch03_%Y%m%d_%H%M%S.jpg &
+
+
+# 영상
+$ ffmpeg -y -rtsp_transport tcp -c:v hevc_nvv4l2dec -i rtsp[ip camera addr.] -vf fps=1 [output dir path]
+$ ffmpeg -rtsp_transport tcp -i <rtsp_url> -acodec copy -vcodec  copy  -t 00:10:00 D:\video_test.mp4
+
+
 
 ## Body contents
 {
